@@ -1,0 +1,250 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sniglet:wght@400;800&display=swap");
+
+/* Css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  border: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  min-height: 100vh;
+}
+
+/* Wrapper */
+
+.wrapper{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
+    gap: 25px;
+}
+
+.wrapper li{
+    background-color: white;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+
+}
+
+.add-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+
+.add-box .icon{
+    color: #c850c0;
+    height: 78px;
+    width: 78px;
+    border: 2px dashed #c850c0;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    border-radius: 50%;
+}
+
+.add-box p{
+    color: #c850c0;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.note .details{
+    max-height: 165px;
+    overflow-y: auto;
+}
+
+
+.note .details .title{
+    font-size: 25px;
+}
+
+.note .details .description{
+    color: #575757;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.note .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.note .bottom #date{
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.note .bottom .settings i{
+    color: #6d6d6d;
+    cursor: pointer;
+    font-size: 17px;
+
+}
+
+.note .bottom .settings{
+    position: relative;
+}
+ .note .bottom .menu{
+    position: absolute;
+    bottom: -10px;
+    right: -55px;
+    z-index: 1;
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .15);
+    scale: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px ;
+    
+}
+
+.note .bottom .menu li{
+    height: 25px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: unset;
+    padding: 17px 15px;
+    gap: 5px;
+    border-radius: unset;
+    cursor: pointer;
+    
+
+}
+
+
+
+.note .bottom .settings.show .menu{
+    scale: 1;
+}
+
+.note .bottom .menu li:hover{
+    background-color: #f5f5f5;
+}
+
+/* Popup */
+
+.popup-box,.popup{
+    display: none;
+}
+.popup-box.show,
+.popup.show{
+    display: block;
+}
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+}
+
+.popup .content{
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+}
+.popup .content header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 15px 25px;
+border-bottom: 1px solid #ccc;
+}
+
+.popup .content header h1{
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.popup .content header i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popup .content  form{
+    padding: 15px 25px 35px;
+
+}
+
+.popup .content  form .row{
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+ 
+.popup .content  form .row label{
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.popup .content  form :where(input, textarea){
+    border: 1px solid #999;
+    height: 50px;
+    width: 100% !important;
+    text-indent: 15px;
+    border-radius: 5px ;
+  
+}
+
+.popup .content  form :where(input, textarea):focus{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .11);
+}
+.popup .content  form textarea{
+    resize: none;
+    height: 150px !important;
+    padding: 8px 0;
+    
+}
+
+.popup .content form button{
+    background-color: #c850c0;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+}

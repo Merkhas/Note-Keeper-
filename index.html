@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not Keeper</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Box icons cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Add box -->
+      <li class="add-box">
+        <div class="icon">
+          <i class='bx  bx-plus-circle'  ></i> 
+        </div>
+        <p>Add New Note</p>
+      </li>
+
+
+    </div>
+
+    <!-- *model -->
+
+    <div class="popup-box ">
+      <div class="popup ">
+        <div class="content">
+          <!-- Header -->
+           <header>
+            <h1>New Note</h1>
+            <i id="close-btn" class='bx  bx-x'  ></i> 
+           </header>
+
+           <!-- Form -->
+            <form>
+              <!-- Title -->
+              <div class="row title">
+                <label>Title</label>
+                <input type="text">
+              </div>
+
+              <!-- Description -->
+
+
+              <div class="row description">
+                <label>Description</label>
+                <textarea></textarea>
+              </div>
+
+              <!-- Button -->
+               <button>Add Note</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- script link -->
+    <script src="main.js"></script>
+  </body>
+</html>
